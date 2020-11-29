@@ -18,8 +18,7 @@ pub struct Game {
 
 impl Game {
   pub fn new(width: u32, height: u32) -> Game {
-    const INITIAL_COUNT: u32 = 10;
-    let mut window: PistonWindow = WindowSettings::new("Hello window", [width, height])
+    let mut window: PistonWindow = WindowSettings::new("Particle System", [width, height])
       .exit_on_esc(true)
       .build()
       .unwrap();
@@ -28,11 +27,7 @@ impl Game {
 
     let cursor = [0.0, 0.0];
 
-    let mut particles = Vec::new();
-    for _v in 0..INITIAL_COUNT {
-      let p = Particle::new(100.0, 100.0, 1.0);
-      particles.push(p);
-    }
+    let particles = Vec::new();
     return Game {
       width,
       height,
