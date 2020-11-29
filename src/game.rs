@@ -1,5 +1,3 @@
-extern crate piston;
-extern crate piston_window;
 use piston_window::{
   clear, EventLoop, MouseCursorEvent, PistonWindow, RenderEvent, WindowSettings,
 };
@@ -17,7 +15,7 @@ pub struct Game {
 }
 
 impl Game {
-  pub fn new(width: u32, height: u32) -> Game {
+  pub fn new(width: u32, height: u32) -> Self {
     let mut window: PistonWindow = WindowSettings::new("Particle System", [width, height])
       .exit_on_esc(true)
       .build()
@@ -28,13 +26,13 @@ impl Game {
     let cursor = [0.0, 0.0];
 
     let particles = Vec::new();
-    return Game {
+    Self {
       width,
       height,
       window,
       cursor,
       particles,
-    };
+    }
   }
 
   // https://www.reddit.com/r/rust/comments/340c3a/get_the_borrowck_error_when_borrow_self_twice_in/

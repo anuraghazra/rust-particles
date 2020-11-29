@@ -1,4 +1,3 @@
-extern crate piston_window;
 use piston_window::{rectangle, Context, G2d};
 
 use rand::Rng;
@@ -15,14 +14,14 @@ pub struct Particle {
 }
 
 impl Particle {
-  pub fn new(x: f64, y: f64, gravity: f64) -> Particle {
+  pub fn new(x: f64, y: f64, gravity: f64) -> Self {
     let mut rng = rand::thread_rng();
     let color: [f32; 3] = [
       rng.gen_range(0.1, 1.0),
       rng.gen_range(0.1, 1.0),
       rng.gen_range(0.1, 1.0),
     ];
-    return Particle {
+    Self {
       x,
       y,
       vx: rng.gen_range(-5.0, 5.0),
@@ -31,7 +30,7 @@ impl Particle {
       color,
       gravity,
       life: 1.0,
-    };
+    }
   }
 
   pub fn update(&mut self, width: u32, height: u32) {
