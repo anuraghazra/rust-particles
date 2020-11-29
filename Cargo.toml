@@ -1,0 +1,13 @@
+[package]
+name = "piston-test"
+version = "0.1.0"
+authors = ["Anurag <hazru.anurag@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "*"
+piston = "*"
+piston_window = "*"
+conrod = "0.62.1"
